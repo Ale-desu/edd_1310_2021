@@ -19,26 +19,25 @@ class Queue:
         cadena=cadena+"|"
         return cadena
 
-
 class BoundedPriorityQueue:
     def __init__(self,niveles):
-        self.__data[Queue()for x in range(niveles)]
+        self.__data=[Queue() for x in range(niveles)]
         self.__size=0
     def is_empty(self):
         return self.__size==0
     def lenght (self):
         return self.__size
     def enqueue (self, prioridad, elem):
-        if prioridad< len(self__data) and prioridad>=0:
+        if prioridad< len(self.__data) and prioridad>=0:
             self.__data[prioridad].enqueue(elem)
             self.__size+=1
     def dequeue(self):
         if not self.is_empty():
             for nivel in self.__data:
-                if not nivel.is empty():
+                if not nivel.is_empty():
                     self.__size-=1
-                    return ivel.dequeue()
+                    return nivel.dequeue()
     def to_string(self):
         print("cola")
         for nivel in range (len(self.__data)):
-            print(f"Nivel{nivel}-->{self.__data[nivel].to_string()}")
+            print(f"Nivel{nivel}-->{self.__data[nivel].toString()}")
