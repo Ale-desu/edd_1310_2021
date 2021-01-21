@@ -40,3 +40,41 @@ class BinarySearchTree:
             print("posorden")
         else:
             print("xd")
+     def transversal(self, format= "inorden"):
+        if format == "inorden":
+          self.__recorrido_in(self.__root)
+        elif format =="preorden":
+          print("Recorrido en pre")
+        elif format =="posorden":
+          print("Recorrido pos")
+        else:
+          print("Error, formato inexistente")
+        print("")  
+
+      def __search(self, nodo, value):
+        if nodo:
+          return None
+        elif nodo.data== value :#Caso Base de RECURSIVIDAD
+           print("Encontrado")
+           return nodo.data
+        elif value < nodo.data: 
+            print ("Buscar a la izquierda")
+            return self.__search(nodo.left, value)
+        else: 
+            print ("Buscar a la derecha")
+            return self.__search()  
+        def search( self , value ):
+            if self.__root == None:
+                return None
+            else:
+                return self.__search( self.root , value ) 
+
+        def remove (self, value):
+            encontrado=self.search(value)
+    #Caso 1
+            if encontrado.left ==None and encontrado.right ==None:
+                print("Eliminando", encontrado.data)
+                encontrado=None
+    #Caso 2
+            elif (encontrado. left != None and encontrado.right ==None) or (encontrado.left == None and encontrado.right != None):
+                pass
